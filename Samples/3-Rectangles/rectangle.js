@@ -36,7 +36,7 @@
 		new Rectangle({
 			width: 100,
 			height: 60,
-			position:  {
+			position: {
 				x: 50,
 				y: 100
 			},
@@ -45,7 +45,7 @@
 		new Rectangle({
 			width: 100,
 			height: 300,
-			position:  {
+			position: {
 				x: 150,
 				y: 110
 			},
@@ -54,7 +54,7 @@
 		new Rectangle({
 			width: 130,
 			height: 90,
-			position:  {
+			position: {
 				x: 80,
 				y: 200
 			},
@@ -63,7 +63,7 @@
 	];
 
 	_(models).each(function (model) {
-		$("div#canvas").append(new RectangleView({model: model}).render().el);	
+		$("div#canvas").append(new RectangleView({ model: model }).render().el);
 	});
 
 })();	

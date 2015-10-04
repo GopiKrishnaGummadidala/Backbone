@@ -35,13 +35,13 @@
 	var myRectangle = new Rectangle({
 		width: 100,
 		height: 60,
-		position:  {
+		position: {
 			x: 50,
 			y: 100
 		},
 		backgroundColor: 'red'
 	});
-	var myRectangleView = new RectangleView({model: myRectangle});
+	var myRectangleView = new RectangleView({ model: myRectangle });
 
 	$("div#canvas").append(myRectangleView.render().el);
 
