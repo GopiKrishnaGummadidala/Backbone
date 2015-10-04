@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Backbone Example-1</title>
+</head>
+<body>
+	<script type="text/javascript" src="../lib/underscore.js"></script>
+	<script type="text/javascript" src="../lib/jquery.js"></script>
+	<script type="text/javascript" src="../lib/backbone.js"></script>
+	<script type="text/javascript">
+
+		console.log(Backbone);
+
+		var book = new Backbone.Model({
+			title: 'Angular 2',
+			author: 'Shravan Kasagoni'
+		});
+
+		console.log(book);
+
+		console.log(book.get('author'));
+		console.log(book.get('title'));
+
+		book.set('title', 'Angular 2 UI Development');
+
+		console.log(book.get('title'));
+
+	</script>
+</body>
+</html>
