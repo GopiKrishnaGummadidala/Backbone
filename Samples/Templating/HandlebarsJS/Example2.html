@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>HandlebarsJS Templating Example-2</title>
+</head>
+
+<body>
+	<script type="text/javascript" src="../../lib/underscore.js"></script>
+	<script type="text/javascript" src="../../lib/jquery.js"></script>
+	<script type="text/javascript" src="../../lib/backbone.js"></script>
+	<script type="text/javascript" src="../../lib/handlebars.js"></script>
+
+	<script type="text/javascript">
+		var SampleView = Backbone.View.extend({
+			render: function() {
+				
+				var coordinates = { latitude: 20.2, longitude: 30.5 };
+		
+				var source = "<p>Latitude: {{latitude}} <br/> Longitude: {{longitude}}</p>";
+		
+				var template = Handlebars.compile(source);
+				
+				this.$el.html(template(coordinates));
+				
+				return this;
+			}
+		});
+
+		var v1 = new SampleView({el: 'body'});
+		v1.render();
+	</script>
+</body>
+
+</html>
