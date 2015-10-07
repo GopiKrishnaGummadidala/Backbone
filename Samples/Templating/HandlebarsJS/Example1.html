@@ -8,16 +8,15 @@
 <body>
 	<script type="text/javascript" src="../../lib/jquery.js"></script>
 	<script type="text/javascript" src="../../lib/handlebars.js"></script>
-	
+
 	<script type="text/javascript">
-		
 		var coordinates = { latitude: 20.2, longitude: 30.5 };
 		
 		var source = "<p>Latitude: {{latitude}} <br/> Longitude: {{longitude}}</p>";
 		
 		var template = Handlebars.compile(source);
 		
-		$('body').append(template(coordinates));
+		$("body").append(template(coordinates));
 	</script>
 </body>
 
