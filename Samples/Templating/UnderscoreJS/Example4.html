@@ -36,13 +36,13 @@
 		
 		var SampleView = Backbone.View.extend({
 			render: function() {
-				var template = _.template($('#coordinates-template').html());
+				var template = _.template($("#coordinates-template").html());
 				this.$el.html(template(this.model.toJSON()));
 				return this;
 			}
 		});
 
-		var v = new SampleView({el: 'body', model: coordinates});
+		var v = new SampleView({el: "body", model: coordinates});
 		v.render();
 	</script>
 </body>

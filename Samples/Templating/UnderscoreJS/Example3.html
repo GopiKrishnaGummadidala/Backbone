@@ -21,19 +21,20 @@
 	<script type="text/javascript" src="../../lib/backbone.js"></script>
 
 	<script type="text/javascript">
+	
 		var GeoCoordinates = Backbone.Model.extend({});
 		
 		var coordinates = new GeoCoordinates({ latitude: 20.2, longitude: 30.5 });
 		
 		var SampleView = Backbone.View.extend({
 			render: function() {
-				var template = _.template($('#coordinates-template').html());
+				var template = _.template($("#coordinates-template").html());
 				this.$el.html(template(this.model.toJSON()));
 				return this;
 			}
 		});
 
-		var v = new SampleView({el: 'body', model: coordinates});
+		var v = new SampleView({el: "body", model: coordinates});
 		v.render();
 	</script>
 </body>
