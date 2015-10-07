@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>HandlebarsJS Templating Example-3</title>
+</head>
+
+<body>
+
+	<script id="coordinates-template" type="text/x-handlebars-template">
+		<p>Latitude: {{latitude}}</p>
+		<p>Longitude: {{longitude}}</p>
+
+		<ul>
+			{{#each numbers}}
+				<li> {{ this }} </li>
+			{{/each}}
+		</ul>
+	</script>
+
+	<script type="text/javascript " src="../../lib/underscore.js"></script>
+	<script type="text/javascript " src="../../lib/jquery.js"></script>
+	<script type="text/javascript " src="../../lib/backbone.js"></script>
+	<script type="text/javascript " src="../../lib/handlebars.js"></script>
+
+	<script type="text/javascript">
+		var SampleView = Backbone.View.extend({
+			render: function() {
+				
+				var data = { latitude: 20.2, longitude: 30.5, numbers: [1,2,3,4,5] };
+		
+				var source = $("#coordinates-template").html();
+		
+				var template = Handlebars.compile(source);
+				
+				this.$el.html(template(data));
+				
+				return this;
+			}
+		});
+
+		var v1 = new SampleView({el: 'body'});
+		v1.render();
+	</script>
+</body>
+
+</html>
