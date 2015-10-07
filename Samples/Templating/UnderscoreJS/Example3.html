@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>UnderscoreJS Templating Example-3</title>
+</head>
+
+<body>
+
+	<script id="coordinates-template" type="text/html">
+		<p>Latitude:
+			<%= latitude %>
+		</p>
+		<p>Longitude:
+			<%= longitude %>
+		</p>
+	</script>
+
+	<script type="text/javascript" src="../../lib/underscore.js"></script>
+	<script type="text/javascript" src="../../lib/jquery.js"></script>
+	<script type="text/javascript" src="../../lib/backbone.js"></script>
+
+	<script type="text/javascript">
+		var GeoCoordinates = Backbone.Model.extend({});
+		
+		var coordinates = new GeoCoordinates({ latitude: 20.2, longitude: 30.5 });
+		
+		var SampleView = Backbone.View.extend({
+			render: function() {
+				var template = _.template($('#coordinates-template').html());
+				this.$el.html(template(this.model.toJSON()));
+				return this;
+			}
+		});
+
+		var v = new SampleView({el: 'body', model: coordinates});
+		v.render();
+	</script>
+</body>
+
+</html>
